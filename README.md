@@ -87,5 +87,20 @@ Duplicating my souce tree (linux directions):
 7 Flash the new software!
 
 	navigate to ./out/target/product/<device> -> replace <device> with the codename of your device
+
+	Plug your phone into fastboot mode
+
+	Run the following commands as superuser (sudo su)
+
+	fastboot flash -S 256M system system.img
+	fastboot flash -S 256M userdata userdata.img
+	fastboot flash -S 256M boot boot.img
+
+		"-S 256M" limits the files sent over at one time to 256MB. This was set by Sony so I suggest following
+		it!
+
+	Your first boot may take a while, please be patient!
+
+--Congrats! You're now running the purest version of android!!--
 		
 	
