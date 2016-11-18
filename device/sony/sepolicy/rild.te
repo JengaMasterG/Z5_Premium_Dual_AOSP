@@ -1,0 +1,24 @@
+binder_call(rild, mediaserver)
+binder_use(rild)
+binder_service(rild)
+
+qmux_socket(rild);
+
+
+r_dir_file(rild, sysfs_ssr)
+
+r_dir_file(rild, netmgrd)
+
+#Allow access to netmgrd socket
+netmgr_socket(rild);
+
+# Rule for RILD to talk to peripheral manager
+use_per_mgr(rild);
+
+allow rild sysfs_pronto:file r_file_perms;
+allow rild mediaserver_service:service_manager find;
+allow rild system_health_monitor_device:chr_file r_file_perms;
+
+r_dir_file(rild, sysfs_socinfo)
+r_dir_file(rild, sysfs_subsys)
+
