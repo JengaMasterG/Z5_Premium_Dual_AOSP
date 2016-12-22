@@ -1,2 +1,0 @@
-allow debuggerd urandom_device:file { getattr open read };
-

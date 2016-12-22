@@ -1,3 +1,0 @@
-allow netd netd:capability sys_module;
-
-binder_use(netd);

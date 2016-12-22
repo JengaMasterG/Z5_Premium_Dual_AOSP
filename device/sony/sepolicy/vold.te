@@ -1,2 +1,0 @@
-allow vold urandom_device:file { getattr open read };
-
