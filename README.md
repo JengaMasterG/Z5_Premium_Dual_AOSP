@@ -3,7 +3,7 @@
 
 If you would like to use my work, please include me as a contributer and let me know what you've made!
 
-TO BUILD FULL OS, YOU WILL NEED AT LEAST 120 GB OF FREE STORAGE SPACE!
+TO BUILD FULL OS, YOU WILL NEED AT LEAST 300 GB OF FREE STORAGE SPACE!
 
 To start from scratch go to:
 
@@ -47,23 +47,37 @@ Duplicating my souce tree (linux directions):
 
 4 Initilazie the AOSP Source
 
-	Using the terminal, cd in to your working directory (Mine is AOSP/satsuki/7.0/)
+	Using the terminal, cd in to your working directory. We will be downloading TWO working directories (one for kernel and one for the OS) (Mine is AOSP/7.0/r17 and AOSP/7.0/r24)
 	
 	Run the following in the terminal:
 
-	mkdir ./android
-	cd ./android
+	mkdir ./r17/android
+	cd ./r17/android
 	repo init -u https://android.googlesource.com/platform/manifest -b android-7.0.0_r17
+
+	mkdir ./r24/android
+	cd ./r24/android
+	repo init -u https://android.googlesource.com/platform/manifest -b android-7.0.0_r24
 
 		This will initialize the source tree that you will be syncing from!
 
 
-	Download/git pull my source and save it in your working ./android directory
+	Download/git pull my source into a different folder!
+
+	Download the software binaries for your device here:
+	http://developer.sonymobile.com/open-devices/list-of-devices-and-resources/
+
+	Then:
+	Copy kernel, device and .repo from my source  to the r17/android folder	
+	Copy device, .repo and frameworks from my source to the r24/android folder
+
+	Finally:
+	Copy the vendor file from the software binaries zip to both the r17/android AND r24/android folder.
 
 	Run the following command:
 	repo sync
 
-		This is a large download (20GB or more)! Let this download overnight or while you're out during the day!
+		This is a large download (40GB or more)! Let this download overnight or while you're out during the day!
 
 
 5 Go to the Sony Developer World Mobile Link above, Scroll to the "Add necessary patches from the AOSP upstream branch" section, and follow the directions there.
