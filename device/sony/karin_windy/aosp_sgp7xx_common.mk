@@ -12,20 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Device path
+BOARD_COMMON_PATH := device/sony/karin_windy
+
 TARGET_KERNEL_CONFIG := aosp_kitakami_karin_defconfig
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/karin_windy/overlay
+    $(BOARD_COMMON_PATH)/overlay
 
 PRODUCT_COPY_FILES += \
-    device/sony/karin_windy/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    device/sony/karin_windy/rootdir/system/etc/BCM4356.hcd:system/etc/firmware/BCM43xx.hcd \
-    device/sony/karin_windy/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
-    device/sony/karin_windy/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    device/sony/karin_windy/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/karin_windy/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/sony/karin_windy/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    device/sony/karin_windy/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/BCM4356.hcd:system/etc/firmware/BCM43xx.hcd \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(BOARD_COMMON_PATH)/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml
